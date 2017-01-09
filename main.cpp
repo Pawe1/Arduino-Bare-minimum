@@ -11,6 +11,9 @@ void initVariant() { }
 void setupUSB() __attribute__((weak));
 void setupUSB() { }
 
+void setup() { }
+void loop() { }
+
 int main(void)
 {
 	init();   // Initialize Arduino functionality. Requires Arduino.h
@@ -21,7 +24,12 @@ int main(void)
 	USBDevice.attach();   // Attach USB for applicable processors.
 #endif
 	
-	// ...
+	setup();
+    
+	for (;;) {
+		loop();
+		if (serialEventRun) serialEventRun();
+	}
 	
 	return 0;   // Execution should never reach this point.
 }
