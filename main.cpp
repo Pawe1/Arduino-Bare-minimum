@@ -25,6 +25,7 @@ int main(void)
 		
 		// ...
 		
+		if (serialEventRun) serialEventRun();   // Requires Arduino.h
 	}
 	
 	return 0;   // Execution should never reach this point.
