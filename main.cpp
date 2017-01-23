@@ -21,7 +21,11 @@ int main(void)
 	USBDevice.attach();   // Attach USB for applicable processors.
 #endif
 	
-	// ...
+	for (;;) {
+		
+		// ...
+		
+	}
 	
 	return 0;   // Execution should never reach this point.
 }
